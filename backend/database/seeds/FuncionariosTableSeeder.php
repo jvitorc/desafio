@@ -14,6 +14,18 @@ class FuncionariosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+        $faker = \Faker\Factory::create();
+
+        for ($i = 0; $i < 10; $i++) {
+            Funcionario::create([
+                'nome' => $faker->name,
+                'login' => $faker->userName,
+                'senha' => $faker->password,
+                'endereco' => $faker->address,
+                'cpf' => Str::random(11),
+                'email' => $faker->email
+            ]);
+        }
     }
 }
