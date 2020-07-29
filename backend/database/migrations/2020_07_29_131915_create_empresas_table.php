@@ -16,7 +16,7 @@ class CreateEmpresasTable extends Migration
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('cnpj',14);
+            $table->string('cnpj',14)->unique();
             $table->string('endereco');
             $table->timestamps();
         });
