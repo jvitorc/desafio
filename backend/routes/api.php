@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Empresa;
 use App\Funcionario;
+use App\Http\Controllers\EmpresaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,30 +18,11 @@ use App\Funcionario;
 */
  
 // Empresas
-Route::get('empresas', function() {
-    return Empresa::all();
-});
- 
-Route::get('empresas/{id}', function($id) {
-    return Empresa::find($id);
-});
-
-Route::post('empresas', function(Request $request) {
-    return Empresa::create($request->all());
-});
-
-Route::put('empresas/{id}', function(Request $request, $id) {
-    $empresa = Empresa::findOrFail($id);
-    $empresa->update($request->all());
-
-    return $empresa;
-});
-
-Route::delete('empresas/{id}', function($id) {
-    Empresa::find($id)->delete();
-
-    return 204;
-});
+Route::get('empresas', 'EmpresaController@index');
+Route::get('empresas/{empresa}', 'EmpresaController@show');
+Route::post('empresas', 'EmpresaController@store');
+Route::put('empresas/{empresa}', 'EmpresaController@update');
+Route::delete('empresas/{empresa}', 'EmpresaController@destroy');
 
 // Funcionarios
 Route::get('funcionarios', function() {
