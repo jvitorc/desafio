@@ -19,10 +19,10 @@ use App\Http\Controllers\EmpresaController;
  
 // Empresas
 Route::get('empresas', 'EmpresaController@index');
-Route::get('empresas/{empresa}', 'EmpresaController@show');
+Route::get('empresas/{id}', 'EmpresaController@show');
 Route::post('empresas', 'EmpresaController@store');
-Route::put('empresas/{empresa}', 'EmpresaController@update');
-Route::delete('empresas/{empresa}', 'EmpresaController@destroy');
+Route::put('empresas/{id}', 'EmpresaController@update');
+Route::delete('empresas/{id}', 'EmpresaController@destroy');
 
 // Funcionarios
 Route::get('funcionarios', function() {
