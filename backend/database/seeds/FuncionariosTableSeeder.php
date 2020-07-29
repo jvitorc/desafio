@@ -17,7 +17,7 @@ class FuncionariosTableSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             Funcionario::create([
                 'nome' => $faker->name,
                 'login' => $faker->userName,
