@@ -17,10 +17,10 @@ class Controller extends BaseController
         $result = array();
 
         foreach ($array as $item) {
-            $result = [
+            array_push($result, [
                 'id' => $item->id,
                 'nome' => $item->nome
-            ];
+            ]);
         }
         return $result;
     }

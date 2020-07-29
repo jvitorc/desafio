@@ -18,8 +18,8 @@ class CreateEmpresaFuncionarioTable extends Migration
             $table->bigInteger('funcionario_id')->unsigned();
     
             $table->primary(['empresa_id', 'funcionario_id']);
-            $table->foreign('empresa_id')->references('id')->on('empresas');
-            $table->foreign('funcionario_id')->references('id')->on('funcionarios');
+            $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('funcionario_id')->references('id')->on('funcionarios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
