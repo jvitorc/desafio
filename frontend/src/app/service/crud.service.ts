@@ -25,6 +25,7 @@ export class CrudService {
 
   create(item: any, url: string): Observable<any> {
     const new_url = `${this.baseUrl}/${url}`; 
+    console.log("ERROR", item, url);
     return this.httpClient.post<any>(new_url, item).pipe(
       map(obj => obj),catchError(e => this.handlerError(e))
     );
@@ -54,7 +55,7 @@ export class CrudService {
   delete(id: number, url: string): Observable<any> {
     const new_url = `${this.baseUrl}/${url}/${id}`;
     return this.httpClient.delete<any>(new_url).pipe(
-      map(obj => obj),catchError(e => this.handlerError(e))
+      map(obj => obj),catchError(e =>  this.handlerError(e))
     );
   }
 

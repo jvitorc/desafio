@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-title> Novo Funcionario </mat-card-title>
+
+    <form>
+        <mat-form-field> 
+            <input matInput placeholder="Nome" [(ngModel)]="funcionario.nome" name="nome">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Login" [(ngModel)]="funcionario.login" name="login">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="funcionario.senha" name="senha">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="funcionario.cpf" name="cpf">
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="funcionario.email" name="email">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Endereço" [(ngModel)]="funcionario.endereco" name="endereco">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="createFuncionario()">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button> 
+    
+</mat-card>

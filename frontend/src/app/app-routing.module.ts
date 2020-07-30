@@ -1,3 +1,4 @@
+import { FuncionariosCreateComponent } from './components/funcionarios/funcionarios-create/funcionarios-create.component';
 import { EmpresasDeleteComponent } from './components/empresas/empresas-delete/empresas-delete.component';
 import { EmpresasUpdateComponent } from './components/empresas/empresas-update/empresas-update.component';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: "funcionarios",
     component: FuncionariosCrudComponent
+  },
+  {
+    path: "funcionarios/create",
+    component: FuncionariosCreateComponent
   },
 ];
 
