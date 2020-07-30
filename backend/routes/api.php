@@ -29,29 +29,14 @@ Route::get('empresas/{id}/funcionarios/{id_funcionario}', 'EmpresaController@sho
 Route::post('empresas/{id}/funcionarios', 'EmpresaController@atacchFuncionario');
 Route::delete('empresas/{id}/funcionarios/{id_funcionario}', 'EmpresaController@detachFuncionario');
 
-
 // Funcionarios
-Route::get('funcionarios', function() {
-    return Funcionario::all();
-});
- 
-Route::get('funcionarios/{id}', function($id) {
-    return Funcionario::find($id);
-});
-
-Route::post('funcionarios', function(Request $request) {
-    return Funcionario::create($request->all());
-});
-
-Route::put('funcionarios/{id}', function(Request $request, $id) {
-    $funcionario = Funcionario::findOrFail($id);
-    $funcionario->update($request->all());
-
-    return $funcionario;
-});
-
-Route::delete('funcionarios/{id}', function($id) {
-    Funcionario::find($id)->delete();
-
-    return 204;
-});
+Route::get('funcionarios', 'FuncionarioController@index');
+Route::get('funcionarios/{id}', 'FuncionarioController@show');
+Route::post('funcionarios', 'FuncionarioController@store');
+Route::put('funcionarios/{id}', 'FuncionarioController@update');
+Route::delete('funcionarios/{id}', 'FuncionarioController@destroy');
+// Funcionario -> Empresas
+Route::get('funcionarios/{id}/empresas', 'FuncionarioController@indexEmpresas');
+Route::get('funcionarios/{id}/empresas/{id_empresa}', 'FuncionarioController@showEmpresa');
+Route::post('funcionarios/{id}/empresas', 'FuncionarioController@atacchEmpresa');
+Route::delete('funcionarios/{id}/empresas/{id_empresa}', 'FuncionarioController@detachEmpresa');

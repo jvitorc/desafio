@@ -139,7 +139,18 @@ class EmpresaController extends Controller
 
         return $empresa->funcionarios;
     }    
-    // Route::get('empresas/{id}/funcionarios/{id_funcionario}', 'EmpresaController@showFuncionario');
+
+    public function showFuncionario($id, $id_funcionario) {
+        // $empresa = Empresa::find($id);
+        // if (!$empresa) {
+        //     return response()->json("Empresa não foi encotrada", 404);
+        // }
+
+        // if(!$empresa->funcionarios->contains($id_funcionario)){
+        //     return response()->json("Funcionario não foi encotrado", 404);
+        // }
+    }
+
 
     public function atacchFuncionario(Request $request, $id) {
         $empresa = Empresa::find($id);
