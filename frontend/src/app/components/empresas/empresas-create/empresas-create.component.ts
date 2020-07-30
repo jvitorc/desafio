@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EmpresasCreateComponent implements OnInit {
 
-  private empresa: Empresa = {
+  empresa: Empresa = {
     nome: "",
     cnpj: "" ,
     endereco: ""
