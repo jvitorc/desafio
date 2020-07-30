@@ -31,6 +31,7 @@ import { EmpresasUpdateComponent } from './components/empresas/empresas-update/e
 import { EmpresasDeleteComponent } from './components/empresas/empresas-delete/empresas-delete.component';
 import { FuncionariosCreateComponent } from './components/funcionarios/funcionarios-create/funcionarios-create.component';
 import { FuncionariosReadComponent } from './components/funcionarios/funcionarios-read/funcionarios-read.component';
+import { FuncionariosUpdateComponent } from './components/funcionarios/funcionarios-update/funcionarios-update.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FuncionariosReadComponent } from './components/funcionarios/funcionario
     EmpresasUpdateComponent,
     EmpresasDeleteComponent,
     FuncionariosCreateComponent,
-    FuncionariosReadComponent
+    FuncionariosReadComponent,
+    FuncionariosUpdateComponent
   ],
   imports: [
     BrowserModule,
