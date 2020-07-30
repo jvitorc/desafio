@@ -1,4 +1,6 @@
+import { CrudService } from './../../../service/crud.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-empresas-create',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpresasCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private crudService: CrudService, 
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  createEmpresa(): void {
+    this.crudService.showMessage("TESTE");
+  }
+
+  cancel(): void {
+    this.router.navigate(['/empresas']);
+  }
 }
