@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { EmpresasReadComponent } from './components/empresas/empresas-read/empresas-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { EmpresasUpdateComponent } from './components/empresas/empresas-update/empresas-update.component';
+import { EmpresasDeleteComponent } from './components/empresas/empresas-delete/empresas-delete.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EmpresasUpdateComponent } from './components/empresas/empresas-update/e
     EmpresasCrudComponent,
     EmpresasCreateComponent,
     EmpresasReadComponent,
-    EmpresasUpdateComponent
+    EmpresasUpdateComponent,
+    EmpresasDeleteComponent
   ],
   imports: [
     BrowserModule,

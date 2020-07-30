@@ -1,3 +1,4 @@
+import { EmpresasDeleteComponent } from './components/empresas/empresas-delete/empresas-delete.component';
 import { EmpresasUpdateComponent } from './components/empresas/empresas-update/empresas-update.component';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
 import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "empresas/update/:id",
     component: EmpresasUpdateComponent
+  },
+  {
+    path: "empresas/delete/:id",
+    component: EmpresasDeleteComponent
   },
   {
     path: "funcionarios",

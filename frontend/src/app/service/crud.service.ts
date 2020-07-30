@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class CrudService {
 
   baseUrl = "http://127.0.0.1:8001/api";
-  baseTesteUrl = "http://localhost:3001";
+  // baseTesteUrl = "http://localhost:3001";
 
   constructor(private snackBar: MatSnackBar, private httpClient:  HttpClient) { }
 
@@ -40,6 +40,11 @@ export class CrudService {
   update(item: any, url: string): Observable<any> {
     const new_url = `${this.baseUrl}/${url}/${item.id}`;
     return this.httpClient.put<any>(new_url, item);
+  }
+
+  delete(id: number, url: string): Observable<any> {
+    const new_url = `${this.baseUrl}/${url}/${id}`;
+    return this.httpClient.delete<any>(new_url);
   }
 
 }
