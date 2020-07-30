@@ -1,3 +1,4 @@
+import { EmpresasUpdateComponent } from './components/empresas/empresas-update/empresas-update.component';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
 import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "empresas/create",
     component: EmpresasCreateComponent
+  }, 
+  {
+    path: "empresas/update/:id",
+    component: EmpresasUpdateComponent
   },
   {
     path: "funcionarios",

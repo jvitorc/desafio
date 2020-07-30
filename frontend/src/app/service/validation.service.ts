@@ -1,3 +1,4 @@
+import { Empresa } from './../components/empresas/empresa.model';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,6 +7,12 @@ import { Injectable } from '@angular/core';
 export class ValidationService {
 
   constructor() { 
+  }
+
+  checkEmpresa(empresa: Empresa): Boolean {
+    return this.checkCNPJ(empresa.cnpj) && 
+            this.checkName(empresa.nome) && 
+            this.checkNoEmpty(empresa.endereco);
   }
 
   checkCNPJ(cnpj: string): Boolean {

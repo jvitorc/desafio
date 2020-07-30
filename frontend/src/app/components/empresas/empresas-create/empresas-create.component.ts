@@ -28,7 +28,7 @@ export class EmpresasCreateComponent implements OnInit {
   }
 
   createEmpresa(): void {
-    if (this.vService.checkCNPJ(this.empresa.cnpj) && this.vService.checkName(this.empresa.nome) && this.vService.checkNoEmpty(this.empresa.endereco)) {
+    if (this.vService.checkEmpresa(this.empresa)) {
       this.crudService.create(this.empresa, 'empresas').subscribe(() => {
         this.crudService.showMessage("Empresa criada");
         this.router.navigate(['/empresas']);

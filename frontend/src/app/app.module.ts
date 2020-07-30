@@ -27,6 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { EmpresasReadComponent } from './components/empresas/empresas-read/empresas-read.component';
 import { MatTableModule } from '@angular/material/table';
+import { EmpresasUpdateComponent } from './components/empresas/empresas-update/empresas-update.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatTableModule } from '@angular/material/table';
     FuncionariosCrudComponent,
     EmpresasCrudComponent,
     EmpresasCreateComponent,
-    EmpresasReadComponent
+    EmpresasReadComponent,
+    EmpresasUpdateComponent
   ],
   imports: [
     BrowserModule,

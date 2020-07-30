@@ -34,12 +34,12 @@ export class CrudService {
 
   readByID(id: string, url: string): Observable<any> {
     const new_url = `${this.baseUrl}/${url}/${id}`;
-    return this.httpClient.get<any>(url);
+    return this.httpClient.get<any>(new_url);
   }
 
   update(item: any, url: string): Observable<any> {
     const new_url = `${this.baseUrl}/${url}/${item.id}`;
-    return this.httpClient.patch<any>(url, item);
+    return this.httpClient.put<any>(new_url, item);
   }
 
 }
