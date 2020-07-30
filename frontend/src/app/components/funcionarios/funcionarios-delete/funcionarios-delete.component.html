@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title> Remover Funcionario </mat-card-title>
+
+    <form>
+        <mat-form-field> 
+            <input matInput placeholder="Nome" [(ngModel)]="funcionario.nome" name="nome" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Login" [(ngModel)]="funcionario.login" name="login" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="funcionario.senha" name="senha" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="funcionario.cpf" name="cpf" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="funcionario.email" name="email" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Endereço" [(ngModel)]="funcionario.endereco" name="endereco" disabled>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="deleteFuncionario()">
+        Remover
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button> 
+    
+</mat-card>
