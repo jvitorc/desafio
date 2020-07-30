@@ -1,3 +1,4 @@
+import { ValidationService } from './../../../service/validation.service';
 import { Empresa } from './../empresa.model';
 import { CrudService } from './../../../service/crud.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,17 +18,24 @@ export class EmpresasCreateComponent implements OnInit {
   };
 
 
-  constructor(private crudService: CrudService, 
-    private router: Router) { }
+  constructor(
+      private crudService: CrudService, 
+      private vService: ValidationService,
+      private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
   createEmpresa(): void {
-    this.crudService.create(this.empresa, 'empresas').subscribe(() => {
-      this.crudService.showMessage("Empresa criada");
-      this.router.navigate(['/empresas']);
-    })
+    if (this.vService.checkCNPJ(this.empresa.cnpj) && this.vService.checkName(this.empresa.nome) && this.vService.checkNoEmpty(this.empresa.endereco)) {
+      this.crudService.create(this.empresa, 'empresas').subscribe(() => {
+        this.crudService.showMessage("Empresa criada");
+        this.router.navigate(['/empresas']);
+      })
+    } else {
+      this.crudService.showMessage("Erro: Campo invalido")
+    }
   }
 
   cancel(): void {
