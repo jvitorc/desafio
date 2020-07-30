@@ -2,15 +2,15 @@
     <mat-sidenav class="sidenav" mode="side"
     opened fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a mat-list-item>
+            <a mat-list-item routerLink="/">
                 <i class="material-icons"> home </i>
                 Inicio
             </a>
-            <a mat-list-item>
+            <a mat-list-item routerLink="/empresas">
                 <i class="material-icons"> work </i>
                 Empresas
             </a>
-            <a mat-list-item>
+            <a mat-list-item= "/funcionarios">
                 <i class="material-icons"> people </i>
                 Funcionarios
             </a>
@@ -18,9 +18,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="content">
-        <app-home></app-home>
-        <app-empresas-crud></app-empresas-crud>
-        <app-funcionarios-crud></app-funcionarios-crud>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 
 </mat-sidenav-container> 
