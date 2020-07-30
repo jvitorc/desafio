@@ -141,15 +141,16 @@ class EmpresaController extends Controller
     }    
 
     public function showFuncionario($id, $id_funcionario) {
-        // $empresa = Empresa::find($id);
-        // if (!$empresa) {
-        //     return response()->json("Empresa não foi encotrada", 404);
-        // }
+        $empresa = Empresa::find($id);
+        if (!$empresa) {
+            return response()->json("Empresa não foi encotrada", 404);
+        }
 
-        // if(!$empresa->funcionarios->contains($id_funcionario)){
-        //     return response()->json("Funcionario não foi encotrado", 404);
-        // }
-    }
+        if(!$empresa->funcionarios->contains($id_funcionario)){
+            return response()->json("Funcionario não foi encotrado", 404);
+        }
+        return response()->json(Funcionario::find($id_funcionario));
+    }   
 
 
     public function atacchFuncionario(Request $request, $id) {

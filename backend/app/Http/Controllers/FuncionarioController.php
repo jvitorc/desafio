@@ -180,6 +180,19 @@ class FuncionarioController extends Controller
         return $funcionario->empresas;
     }
 
+    public function showEmpresa($id, $id_empresa) {
+        $funcionario = Funcionario::find($id);
+        if (!$funcionario) {
+            return response()->json("Funcionario não foi encotrado", 404);
+        }
+
+        if(!$funcionario->empresas->contains($id_empresa)){
+            return response()->json("Empresa não foi encotrada", 404);
+        }
+        return response()->json(Empresa::find($id_empresa));
+    }   
+
+
     public function atacchEmpresa(Request $request, $id) {
         $funcionario = Funcionario::find($id);
         if (!$funcionario) {
