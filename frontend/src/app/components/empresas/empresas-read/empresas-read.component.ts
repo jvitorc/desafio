@@ -11,6 +11,8 @@ export class EmpresasReadComponent implements OnInit {
 
   empresas: Empresa[];
 
+  columnsToDisplay = ['id', 'nome', 'actions'];
+
   constructor(private crudService: CrudService) { }
 
   ngOnInit(): void {
