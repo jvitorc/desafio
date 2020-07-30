@@ -22,12 +22,14 @@ export class CrudService {
     });
   }
 
-  create(item: any, url=""): Observable<any> {
+  create(item: any, url: string): Observable<any> {
     const new_url = `${this.baseUrl}/${url}`; 
-    // const new_url = `${this.baseTesteUrl}/${url}`; 
-
-    console.log(new_url, item);
     return this.httpClient.post<any>(new_url, item);
+  }
+
+  read(url: string): Observable<any> {
+    const new_url = `${this.baseUrl}/${url}`; 
+    return this.httpClient.get<any>(new_url);
   }
 
 }
