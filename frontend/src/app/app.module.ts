@@ -30,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import { EmpresasUpdateComponent } from './components/empresas/empresas-update/empresas-update.component';
 import { EmpresasDeleteComponent } from './components/empresas/empresas-delete/empresas-delete.component';
 import { FuncionariosCreateComponent } from './components/funcionarios/funcionarios-create/funcionarios-create.component';
+import { FuncionariosReadComponent } from './components/funcionarios/funcionarios-read/funcionarios-read.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FuncionariosCreateComponent } from './components/funcionarios/funcionar
     EmpresasReadComponent,
     EmpresasUpdateComponent,
     EmpresasDeleteComponent,
-    FuncionariosCreateComponent
+    FuncionariosCreateComponent,
+    FuncionariosReadComponent
   ],
   imports: [
     BrowserModule,

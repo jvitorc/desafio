@@ -1,0 +1,34 @@
+<div class="mat-elevation-z2">
+    <table mat-table [dataSource]="funcionarios">
+
+        <!-- ID column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let funcionario"> {{ funcionario.id }} </td>
+        </ng-container>
+
+        <!-- Nome column -->
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let funcionario"> {{ funcionario.nome }} </td>
+        </ng-container>
+
+        <!-- Actions column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let funcionario">
+                <a routerLink="/funcionarios/update/{{ funcionario.id }}">
+                    <i class="material-icons edit">edit</i>
+                </a>
+                <a routerLink="/funcionarios/delete/{{ funcionario.id }}">
+                    <i class="material-icons delete">delete</i>
+                </a>
+
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let funcionario; columns: columnsToDisplay"></tr> 
+    </table>
+
+</div> 
