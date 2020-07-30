@@ -17,6 +17,8 @@ import { HomeComponent } from './views/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
 import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.component';
+import { EmpresasCreateComponent } from './components/empresas/empresas-create/empresas-create.component';
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.compo
     NavComponent,
     HomeComponent,
     FuncionariosCrudComponent,
-    EmpresasCrudComponent
+    EmpresasCrudComponent,
+    EmpresasCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.compo
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

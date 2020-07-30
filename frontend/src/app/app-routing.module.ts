@@ -3,6 +3,7 @@ import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.compo
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
+import { EmpresasCreateComponent } from './components/empresas/empresas-create/empresas-create.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: "empresas",
     component: EmpresasCrudComponent
+  },
+  {
+    path: "empresas/create",
+    component: EmpresasCreateComponent
   },
   {
     path: "funcionarios",
