@@ -1,3 +1,4 @@
+import { Empresa } from './../empresa.model';
 import { CrudService } from './../../../service/crud.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,6 +10,13 @@ import { Router } from '@angular/router';
 })
 export class EmpresasCreateComponent implements OnInit {
 
+  private empresa: Empresa = {
+    nome: "",
+    cnpj: "" ,
+    endereco: ""
+  };
+
+
   constructor(private crudService: CrudService, 
     private router: Router) { }
 
@@ -16,7 +24,10 @@ export class EmpresasCreateComponent implements OnInit {
   }
 
   createEmpresa(): void {
-    this.crudService.showMessage("TESTE");
+    this.crudService.create(this.empresa, 'empresas').subscribe(() => {
+      this.crudService.showMessage("Empresa criada");
+      this.router.navigate(['/empresas']);
+    })
   }
 
   cancel(): void {
