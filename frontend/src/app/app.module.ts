@@ -33,6 +33,7 @@ import { FuncionariosCreateComponent } from './components/funcionarios/funcionar
 import { FuncionariosReadComponent } from './components/funcionarios/funcionarios-read/funcionarios-read.component';
 import { FuncionariosUpdateComponent } from './components/funcionarios/funcionarios-update/funcionarios-update.component';
 import { FuncionariosDeleteComponent } from './components/funcionarios/funcionarios-delete/funcionarios-delete.component';
+import { EmpresaFuncionariosComponent } from './components/empresas/empresa-funcionarios/empresa-funcionarios.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FuncionariosDeleteComponent } from './components/funcionarios/funcionar
     FuncionariosCreateComponent,
     FuncionariosReadComponent,
     FuncionariosUpdateComponent,
-    FuncionariosDeleteComponent
+    FuncionariosDeleteComponent,
+    EmpresaFuncionariosComponent
   ],
   imports: [
     BrowserModule,

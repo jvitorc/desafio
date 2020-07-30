@@ -17,13 +17,15 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Ações </th>
             <td mat-cell *matCellDef="let empresa">
+                <a routerLink="/empresas/funcionarios/{{ empresa.id }}">
+                    <i class="material-icons funcionarios"> people </i>
+                </a>
                 <a routerLink="/empresas/update/{{ empresa.id }}">
                     <i class="material-icons edit">edit</i>
                 </a>
                 <a routerLink="/empresas/delete/{{ empresa.id }}">
                     <i class="material-icons delete">delete</i>
                 </a>
-
             </td>
         </ng-container>
 

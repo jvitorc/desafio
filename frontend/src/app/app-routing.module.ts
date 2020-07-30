@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { EmpresasCreateComponent } from './components/empresas/empresas-create/empresas-create.component';
+import { EmpresaFuncionariosComponent } from './components/empresas/empresa-funcionarios/empresa-funcionarios.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: "empresas/delete/:id",
     component: EmpresasDeleteComponent
+  },
+  {
+    path: "empresas/funcionarios/:id",
+    component: EmpresaFuncionariosComponent
   },
   {
     path: "funcionarios",
