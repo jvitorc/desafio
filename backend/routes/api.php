@@ -23,6 +23,12 @@ Route::get('empresas/{id}', 'EmpresaController@show');
 Route::post('empresas', 'EmpresaController@store');
 Route::put('empresas/{id}', 'EmpresaController@update');
 Route::delete('empresas/{id}', 'EmpresaController@destroy');
+// Empresa -> Funcionarios
+Route::get('empresas/{id}/funcionarios', 'EmpresaController@indexFuncionarios');
+Route::get('empresas/{id}/funcionarios/{id_funcionario}', 'EmpresaController@showFuncionario');
+Route::post('empresas/{id}/funcionarios', 'EmpresaController@atacchFuncionario');
+Route::delete('empresas/{id}/funcionarios/{id_funcionario}', 'EmpresaController@detachFuncionario');
+
 
 // Funcionarios
 Route::get('funcionarios', function() {

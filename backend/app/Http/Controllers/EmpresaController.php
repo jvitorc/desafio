@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Collection\map;
 use Illuminate\Http\Request;
 use App\Empresa;
+use App\Funcionario;
+use Facade\FlareClient\Http\Response;
 
 class EmpresaController extends Controller
 {
@@ -127,4 +129,45 @@ class EmpresaController extends Controller
         $empresa->delete();
         return response()->json(null, 204);
     }
+
+    // - -   Empresa -> Funcionarios -- //
+    public function indexFuncionarios($id) {
+        $empresa = Empresa::find($id);
+        if (!$empresa) {
+            return response()->json("Empresa não foi encotrada", 404);
+        }
+
+        return $empresa->funcionarios;
+    }    
+    // Route::get('empresas/{id}/funcionarios/{id_funcionario}', 'EmpresaController@showFuncionario');
+
+    public function atacchFuncionario(Request $request, $id) {
+        $empresa = Empresa::find($id);
+        if (!$empresa) {
+            return response()->json("Empresa não foi encotrada", 404);
+        }
+
+        $funcionario = Funcionario::find($request['id_funcionario']);
+        if (!$funcionario) {
+            return response()->json("Funcionario não foi encotrado", 404);
+        }
+
+        $empresa->funcionarios()->attach($funcionario);
+        return response()->json(null, 204);
+    }
+
+    public function detachFuncionario($id, $id_funcionario) {
+        $empresa = Empresa::find($id);
+        if (!$empresa) {
+            return response()->json("Empresa não foi encotrada", 404);
+        }
+
+        if(!$empresa->funcionarios->contains($id_funcionario)){
+            return response()->json("Funcionario não foi encotrado", 404);
+        }
+
+        $empresa->funcionarios()->detach($id_funcionario);
+        return response()->json(null, 204);      
+    }
+    
 }
