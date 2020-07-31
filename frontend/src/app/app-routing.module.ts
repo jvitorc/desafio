@@ -1,3 +1,4 @@
+import { FuncionarioEmpresasComponent } from './components/funcionarios/funcionario-empresas/funcionario-empresas.component';
 import { FuncionariosDeleteComponent } from './components/funcionarios/funcionarios-delete/funcionarios-delete.component';
 import { FuncionariosUpdateComponent } from './components/funcionarios/funcionarios-update/funcionarios-update.component';
 import { FuncionariosCreateComponent } from './components/funcionarios/funcionarios-create/funcionarios-create.component';
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: "funcionarios/delete/:id",
     component: FuncionariosDeleteComponent
+  },
+  {
+    path: "funcionarios/empresas/:id",
+    component: FuncionarioEmpresasComponent
   }
 
 ];
