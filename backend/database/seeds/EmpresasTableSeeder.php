@@ -16,10 +16,12 @@ class EmpresasTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 5; $i++) {
+            $cnpj = random_int(0,99999999999999);
+
             Empresa::create([
                 'nome' => $faker->name,
                 'endereco' => $faker->address,
-                'cnpj' => Str::random(14)
+                'cnpj' => strval($cnpj)
             ]);
         }
     }
