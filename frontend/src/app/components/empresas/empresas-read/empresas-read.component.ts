@@ -18,7 +18,6 @@ export class EmpresasReadComponent implements OnInit {
   ngOnInit(): void {
     this.crudService.read("empresas").subscribe(empresas => {
       this.empresas = empresas;
-      console.log(empresas);
     })
   }
 

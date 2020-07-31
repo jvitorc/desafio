@@ -17,7 +17,6 @@ export class FuncionariosReadComponent implements OnInit {
   ngOnInit(): void {
     this.crudService.read("funcionarios").subscribe(funcionarios => {
       this.funcionarios = funcionarios;
-      console.log(funcionarios);
     })
   }
 
