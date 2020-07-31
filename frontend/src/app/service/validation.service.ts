@@ -39,7 +39,7 @@ export class ValidationService {
   }
 
   checkName(name: string): Boolean {
-    return /^[A-Za-z0-9 ]+$/.test(name);
+    return /^[A-Za-z0-9,. ]+$/.test(name);
   }
 
   checkNoEmpty(value: string): Boolean {
