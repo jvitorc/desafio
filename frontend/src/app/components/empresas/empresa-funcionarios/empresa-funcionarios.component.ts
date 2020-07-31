@@ -2,9 +2,8 @@ import { Empresa } from './../empresa.model';
 import { Funcionario } from './../../funcionarios/funcionario.model';
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/service/crud.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ValidationService } from 'src/app/service/validation.service';
-import { SELECT_PANEL_INDENT_PADDING_X } from '@angular/material/select';
+import { ActivatedRoute } from '@angular/router';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-empresa-funcionarios',
@@ -21,9 +20,7 @@ export class EmpresaFuncionariosComponent implements OnInit {
   columnsToDisplay = ['id', 'nome', 'delete']
 
   constructor(private crudService: CrudService,
-    private router: Router,
     private route: ActivatedRoute,
-    private vService: ValidationService
     ) { }
 
   ngOnInit(): void {
@@ -42,6 +39,16 @@ export class EmpresaFuncionariosComponent implements OnInit {
     const url = `empresas/${this.empresa.id}/funcionarios`;
     this.crudService.create(data, url).subscribe(() => {
       this.crudService.showMessage("Funcionario adicionado");
+      delay(3000);
+      window.location.reload();
+    });
+  }
+
+  removeFuncionario(funcionario: Funcionario) {
+    const url = `empresas/${this.empresa.id}/funcionarios`;
+    this.crudService.delete(funcionario.id,url).subscribe(() => {
+      this.crudService.showMessage("Funcionario removido");
+      delay(3000);
       window.location.reload();
     });
   }
