@@ -19,7 +19,7 @@ class EmpresasTableSeeder extends Seeder
             $cnpj = random_int(0,99999999999999);
 
             Empresa::create([
-                'nome' => $faker->name,
+                'nome' => $faker->company,
                 'endereco' => $faker->address,
                 'cnpj' => strval($cnpj)
             ]);

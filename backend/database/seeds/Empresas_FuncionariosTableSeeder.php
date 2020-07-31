@@ -17,8 +17,12 @@ class Empresas_FuncionariosTableSeeder extends Seeder
         $funcionarios = Funcionario::all();
 
         Empresa::all()->each(function ($empresa) use ($funcionarios) {
-            $empresa->funcionarios()->attach(random_int(0,$funcionarios->count()));
-            $empresa->funcionarios()->attach(random_int(0,$funcionarios->count()));
+            $f1 = Funcionario::find(random_int(0,$funcionarios->count()));
+            $empresa->funcionarios()->attach($f1);
+            $f2 = Funcionario::find(random_int(0,$funcionarios->count()));
+            if ($f1 != $f2){
+                $empresa->funcionarios()->attach($f2);    
+            }
         });
 
     }
