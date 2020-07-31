@@ -58,7 +58,7 @@ class FuncionarioController extends Controller
         }
 
         if ($request->exists('senha')) {
-            $senha = Hash::make($request['endereco']);
+            $senha = $request['senha'];
         } else {
             $msg = "Endereco invalido ";
         } 
@@ -96,6 +96,7 @@ class FuncionarioController extends Controller
             'email' => $funcionario->email,
             'endereco' => $funcionario->endereco,
             'cpf' => $funcionario->cpf,
+            'senha' => $funcionario->senha,
             'empresas' => $empresas
         ];
 
@@ -150,7 +151,7 @@ class FuncionarioController extends Controller
         }
 
         if ($request->exists('senha')) {
-            $data['senha'] = Hash::make($request['endereco']);
+            $data['senha'] = $request['senha'];
         }
 
         $funcionario->update($data);
